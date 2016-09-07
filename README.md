@@ -15,8 +15,8 @@ Rules:
 
 Usage:
 
-		$ le2bf-exe --help
-		Usage: le2bf-exe [--reverse]
+		$ le2bf --help
+		Usage: le2bf [--reverse]
 
 		Available options:
 			-h,--help                Show this help text
