@@ -55,7 +55,7 @@ fuck = flip lookup translations
 unfuck :: Char -> [Char]
 unfuck x = case x of '\r' -> []
                      '\n' -> []
-                     _    -> maybe [x] (concatMap emit) (lookup x translations')
+                     _    -> maybe [x] ((x:) . concatMap emit) (lookup x translations')
 
 emit :: Ending -> String
 emit Unix = "\n "
