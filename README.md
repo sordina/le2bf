@@ -12,3 +12,12 @@ Rules:
 		DOS  +  Mac  = ','
 		Mac  +  Unix = '['
 		Mac  +  DOS  = ']'
+
+Usage:
+
+		$ le2bf-exe --help
+		Usage: le2bf-exe [--reverse]
+
+		Available options:
+			-h,--help                Show this help text
+
