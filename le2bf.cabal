@@ -26,6 +26,7 @@ executable le2bf-exe
   build-depends:       base
                      , le2bf
                      , split
+                     , optparse-generic
   default-language:    Haskell2010
 
 test-suite le2bf-test
