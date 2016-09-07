@@ -31,8 +31,8 @@ bf2le = concatMap unfuck
 lexer :: String -> [Ending]
 lexer []                = []
 lexer ('\r' : '\n' : t) = DOS    : lexer t
-lexer ('\r' : '\r' : t) = Mac    : lexer t
-lexer ('\n' : '\n' : t) = Unix   : lexer t
+lexer ('\r' : ' '  : t) = Mac    : lexer t
+lexer ('\n' : ' '  : t) = Unix   : lexer t
 lexer (_    :        t) =          lexer t
 
 translations :: [([Ending], Char)]
@@ -58,6 +58,6 @@ unfuck x = case x of '\r' -> []
                      _    -> maybe [x] (concatMap emit) (lookup x translations')
 
 emit :: Ending -> String
-emit Unix = "\n\n"
-emit Mac  = "\r\r"
+emit Unix = "\n "
+emit Mac  = "\r "
 emit DOS  = "\r\n"
